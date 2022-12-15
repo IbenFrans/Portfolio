@@ -107,7 +107,7 @@ section#aboutme{
 }
 #aboutme__text_and_picture{
     width: 70%;
-    margin: 4rem auto;
+    margin: 2rem auto;
     display: flex;
     justify-content: space-between;
 }
@@ -192,6 +192,7 @@ footer p a i{
 }
 footer ul{
     display: flex;
+    list-style-type: none;
     justify-content: space-evenly;
     width: 550px;
     margin: 0.5rem auto;
@@ -208,6 +209,7 @@ aside{
     margin: -135px 0;
     position: relative;
     bottom: 50px;
+    overflow: hidden;
 
     font-family: "Roboto Condensed", sans-serif;
     font-size: 30px;
@@ -244,4 +246,91 @@ aside{
 #mailmemaybe{
     right: 35%;
     rotate: 22.5deg;
+}
+@media screen and (max-width: 1400px) {
+    div#header__h1_title, div#header__extrainfo, main nav, main nav ul, footer{
+        width: 100%;
+    }
+    div#header__h1_title h1{
+        font-size: 180px;
+        margin: 0;
+    }
+    section h2{
+        padding-top: 100px;
+    }
+    #aboutme__text_and_picture{
+        margin: 2rem auto;
+        align-items: center;
+    }
+    #aboutme__text_and_picture img{
+        width: 275px;
+    }
+    .textorb{
+        width: 200px;
+        height: 200px;
+        font-size: 25px;
+    }
+    #theresmore{
+        right: -35%;
+        rotate: -22.5deg;
+    }
+    .projectcolumn {
+        flex: 49%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 900px) {
+    nav{
+        display: none;
+    }
+    section#home{
+        background-image: url("assets/mainbackgroundiphone.png");
+        padding-top: 1rem;
+    }
+    #header__h1_title{
+        flex-direction: column;
+        align-content: flex-start;
+        line-height: 130px;
+    }
+    #home #header__h1_title h1{
+        font-size: 150px;
+    }
+    #header__h1_title h1:nth-child(2){
+        text-align: right;
+    }
+    #header__extrainfo{
+        padding-top: 1rem;
+    }
+    #home #header__socialslinks{
+        width: 80%;
+        justify-content: space-evenly;
+    }
+    section h2{
+        padding-top: 20px;
+    }
+    #aboutme #aboutme__text_and_picture{
+        flex-direction: column;
+        width: 100%;
+    }
+    #aboutme #aboutme__text_and_picture p{
+        font-size: 20px;
+        width: 70%;
+        margin-bottom: 1rem;
+    }
+    section#projects{
+        padding-bottom: 4rem;
+    }
+    section#projects h2{
+        text-align: left;
+    }
+    .projectcolumn {
+        flex: 100%;
+        max-width: 100%;
+    }
+    footer ul{
+        width: 80%;
+    }
+    .textorb{
+        display: none;
+    }
 }
