@@ -9,7 +9,90 @@ nav, main, footer{
     margin: 0 auto;
 }
 /* MAIN */
-main nav{
+/* HAMBURGER NAV IPHONE */
+#nav__iphone{
+    position: fixed;
+    width: 100%;
+    margin-top: 1rem;
+    display: none;
+}
+#menutoggle input{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    right: 10%;
+    top: 30px;
+    z-index: 3;
+    opacity: 0;
+    cursor: pointer;
+}
+#menutoggle #hamburger{
+    color: #FFF;
+    position: absolute;
+    font-size: 32px;
+    right: 10%;
+    top: 30px;
+    display: none;
+
+    z-index: 2;
+}
+#menutoggle #cross{
+    color: #FFF;
+    display: block;
+    position: absolute;
+    font-size: 40px;
+    right: 10%;
+    top: 28px;
+    z-index: 2;
+}
+#menutoggle input:checked ~ #hamburger{
+    display: block;
+}
+#menutoggle input:checked ~ #cross{
+    display: none;
+}
+#menutoggle input:checked ~ #popupmenu li{
+    display: none;
+}
+#menutoggle input:checked ~ #popupmenu{
+    padding: 3rem;
+    margin: -3rem -2rem -3rem -3rem;
+    width: 10%;
+    border-radius: 50%;
+    position: absolute;
+    right: 10%;
+    top: 45px;
+}
+#popupmenu{
+    list-style-type: none;
+    background-color: #01BAA080;
+    border-radius: 40px;
+    padding: 2rem 0;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    -moz-filter: blur(35px);
+    -o-filter: blur(35px);
+    -ms-filter: blur(35px);
+}
+#menutoggle li a{
+    display: inline-block;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin: 1rem;
+    text-decoration: none;
+}
+#menutoggle a:hover{
+    text-decoration: underline;
+}
+
+
+
+/* NORMAL NAV WEB IPAD*/
+main nav#nav__web_ipad{
     width: 100%;
     position: fixed;
     background-color: #01BAA080;
@@ -21,21 +104,21 @@ main nav{
     z-index: 2;
 
 }
-main nav ul{
+main nav#nav__web_ipad ul{
     display: flex;
     list-style-type: none;
     justify-content: space-between;
     width: 60%;
     margin: 0 auto;
 }
-main nav ul li a{
+main nav#nav__web_ipad ul li a{
     font-size: 30px;
     display: inline-block;
     color: #FFFFFF;
     padding: 1rem;
     text-decoration: none;
 }
-main nav ul li a:hover{
+main nav#nav__web_ipad ul li a:hover{
     text-decoration: underline;
 }
 section#home{
@@ -248,7 +331,7 @@ aside{
     rotate: 22.5deg;
 }
 @media screen and (max-width: 1400px) {
-    div#header__h1_title, div#header__extrainfo, main nav, main nav ul, footer{
+    div#header__h1_title, div#header__extrainfo, main nav#nav__web_ipad, main nav#nav__web_ipad ul, footer{
         width: 100%;
     }
     div#header__h1_title h1{
@@ -259,7 +342,7 @@ aside{
         padding-top: 100px;
     }
     #aboutme__text_and_picture{
-        margin: 2rem auto;
+        margin: 0.75rem auto;
         align-items: center;
     }
     #aboutme__text_and_picture img{
@@ -280,7 +363,10 @@ aside{
     }
 }
 @media screen and (max-width: 900px) {
-    nav{
+    nav#nav__iphone{
+        display: block;
+    }
+    nav#nav__web_ipad{
         display: none;
     }
     section#home{
