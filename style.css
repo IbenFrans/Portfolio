@@ -330,7 +330,7 @@ aside{
     right: 35%;
     rotate: 22.5deg;
 }
-@media screen and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) {
     div#header__h1_title, div#header__extrainfo, main nav#nav__web_ipad, main nav#nav__web_ipad ul, footer{
         width: 100%;
     }
@@ -362,7 +362,7 @@ aside{
         max-width: 50%;
     }
 }
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
     nav#nav__iphone{
         display: block;
     }
