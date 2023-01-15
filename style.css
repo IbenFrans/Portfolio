@@ -98,8 +98,6 @@ main nav#nav__web_ipad{
     background-color: #01BAA080;
     backdrop-filter: blur(35px);
     -webkit-backdrop-filter: blur(35px);
-    -moz-filter: blur(35px);
-    -o-filter: blur(35px);
     -ms-filter: blur(35px);
     z-index: 2;
 
@@ -155,8 +153,6 @@ ul#header__socialslinks{
     background-color: #01BAA080;
     backdrop-filter: blur(35px);
     -webkit-backdrop-filter: blur(35px);
-    -moz-filter: blur(35px);
-    -o-filter: blur(35px);
     -ms-filter: blur(35px);
     border-radius: 20px;
     display: flex;
@@ -317,8 +313,6 @@ aside{
     background-color: #01BAA080;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    -moz-filter: blur(15px);
-    -o-filter: blur(15px);
     -ms-filter: blur(15px);
     z-index: 1;
 }
