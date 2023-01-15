@@ -166,9 +166,9 @@ ul#header__socialslinks{
     width: 500px;
     margin: 0 auto;
 }
-ul#header__socialslinks li a i{
-    color: #ffffff;
-    font-size: 30px;
+ul#header__socialslinks li a svg{
+    width: 30px;
+    fill: #FFFFFF;
 }
 /* Algemene css H2 sections */
 section h2{
@@ -265,13 +265,18 @@ footer h3{
     color: #fff;
     font-size: 35px;
 }
+footer p{
+    margin-bottom: 2rem;
+}
 footer p a{
     text-decoration: none;
     color: #ACE9DA;
     font-size: 30px;
 }
-footer p a i{
+footer p a svg{
     margin-right: 1rem;
+    fill: #ACE9DA;
+    width: 30px;
 }
 footer ul{
     display: flex;
@@ -279,11 +284,14 @@ footer ul{
     justify-content: space-evenly;
     width: 550px;
     margin: 0.5rem auto;
+
 }
-footer ul li a{
-    font-size: 30px;
-    color: #ACE9DA;
+footer ul li a svg{
+    width: 30px;
+    fill: #ACE9DA;
 }
+
+/* TEXT ORBS */
 aside{
     display: flex;
     justify-content: center;
@@ -419,7 +427,6 @@ aside{
     }
     #home #header__socialslinks{
         width: 80%;
-        justify-content: space-evenly;
     }
     section h2{
         padding-top: 20px;
@@ -443,5 +450,16 @@ aside{
         width: 80%;
         justify-content: space-between;
     }
+    footer p a{
+        font-size: 24px;
+    }
 
+}
+@media only screen and (max-width: 400px) {
+    #home #header__h1_title h1{
+        font-size: 100px;
+    }
+    #aboutme__text_and_picture img{
+        width: 200px;
+    }
 }
