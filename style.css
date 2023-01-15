@@ -10,7 +10,7 @@ nav, main, footer{
 }
 /* MAIN */
 /* HAMBURGER NAV IPHONE */
-#nav__iphone{
+/* #nav__iphone{
     position: fixed;
     width: 100%;
     margin-top: 1rem;
@@ -88,7 +88,7 @@ nav, main, footer{
 #menutoggle a:hover{
     text-decoration: underline;
 }
-
+*/
 
 
 /* NORMAL NAV WEB IPAD*/
@@ -330,7 +330,7 @@ aside{
     right: 35%;
     rotate: 22.5deg;
 }
-@media screen and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) {
     div#header__h1_title, div#header__extrainfo, main nav#nav__web_ipad, main nav#nav__web_ipad ul, footer{
         width: 100%;
     }
@@ -340,6 +340,10 @@ aside{
     }
     section h2{
         padding-top: 100px;
+    }
+    section#aboutme{
+        height: 100%;
+        padding-bottom: 4rem;
     }
     #aboutme__text_and_picture{
         margin: 0.75rem auto;
@@ -362,7 +366,33 @@ aside{
         max-width: 50%;
     }
 }
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
+    .textorb{
+        display: none;
+    }
+    div#header__h1_title h1{
+        font-size: 100px;
+        margin: 0;
+    }
+    section h2{
+        padding-top: 80px;
+        font-size: 70px;
+    }
+    #aboutme div img{
+        margin-top: 2rem;
+    }
+    #aboutme #aboutme__text_and_picture{
+        flex-direction: column;
+        width: 100%;
+    }
+    .wplassignments ul li a{
+        font-size: 20px;
+    }
+    .wplassignments ul li{
+        margin: 0.5rem 0;
+    }
+}
+@media only screen and (max-width: 620px) {
     nav#nav__iphone{
         display: block;
     }
@@ -379,7 +409,7 @@ aside{
         line-height: 130px;
     }
     #home #header__h1_title h1{
-        font-size: 150px;
+        font-size: 130px;
     }
     #header__h1_title h1:nth-child(2){
         text-align: right;
@@ -393,10 +423,6 @@ aside{
     }
     section h2{
         padding-top: 20px;
-    }
-    #aboutme #aboutme__text_and_picture{
-        flex-direction: column;
-        width: 100%;
     }
     #aboutme #aboutme__text_and_picture p{
         font-size: 20px;
@@ -415,8 +441,7 @@ aside{
     }
     footer ul{
         width: 80%;
+        justify-content: space-between;
     }
-    .textorb{
-        display: none;
-    }
+
 }
