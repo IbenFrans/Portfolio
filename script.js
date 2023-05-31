@@ -14,13 +14,13 @@ let contactButtonHam = document.getElementsByClassName("contactButton")[1];
 let contact = document.getElementById("footer");
 
 homeButton.addEventListener("click", () => home.scrollIntoView({behavior: "smooth"}));
-homeButtonHam.addEventListener("click", () => home.scrollIntoView({behavior: "smooth"}));
+homeButtonHam.addEventListener("click", () => popupClick(home));
 aboutMeButton.addEventListener("click", () => aboutMe.scrollIntoView({behavior: "smooth"}));
-aboutMeButtonHam.addEventListener("click", () => aboutMe.scrollIntoView({behavior: "smooth"}));
+aboutMeButtonHam.addEventListener("click", () => popupClick(aboutMe));
 projectButton.addEventListener("click", () => projects.scrollIntoView({behavior: "smooth"}));
-projectButtonHam.addEventListener("click", () => projects.scrollIntoView({behavior: "smooth"}));
+projectButtonHam.addEventListener("click", () => popupClick(projects));
 contactButton.addEventListener("click", () => contact.scrollIntoView({behavior: "smooth"}));
-contactButtonHam.addEventListener("click", () => contact.scrollIntoView({behavior: "smooth"}));
+contactButtonHam.addEventListener("click", () => popupClick(contact));
 
 
 // Hamburger
@@ -56,6 +56,10 @@ function toggleHamburger(){
             popup.children[i].style.display = "block";
         }
     }
+}
+function popupClick(page){
+    toggleHamburger();
+    page.scrollIntoView({behavior: "smooth"});
 }
 
 hamburger.addEventListener("click", toggleHamburger);

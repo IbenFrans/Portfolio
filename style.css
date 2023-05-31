@@ -120,9 +120,11 @@ main nav#nav__web_ipad ul li a{
     text-decoration: none;
     cursor: pointer;
 }
+
 main nav#nav__web_ipad ul li a:hover{
     text-decoration: underline;
 }
+
 
 /* HOME */
 section#home{
@@ -241,6 +243,12 @@ section div.projectslist h3, section div.wplassignments h3{
 }
 .projectcolumn img{
     width: 100%;
+    transition: all .2s ease-in-out;
+}
+.projectcolumn img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.19) !important;
+    cursor: pointer;
 }
 .wplassignments ul{
     background-color: #6D6D6D;
@@ -472,15 +480,12 @@ aside{
     #header__extrainfo {
         transform: rotate(90deg);
         position: relative;
-        left: -9.5rem;
+        left: -9rem;
         top: 60px;
     }
-    /*#header__extrainfo p:nth-child(2){*/
-    /*    transform: rotate(-90deg);*/
-    /*    position: absolute;*/
-    /*    right: -1rem;*/
-    /*    top: 60vh;*/
-    /*}*/
+    #header__extrainfo p{
+        font-size: 1.5rem;
+    }
 
     #aboutme__text_and_picture img{
         width: 200px;
