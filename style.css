@@ -123,12 +123,15 @@ main nav#nav__web_ipad ul li a{
 main nav#nav__web_ipad ul li a:hover{
     text-decoration: underline;
 }
+
+/* HOME */
 section#home{
     background-image: url("assets/mainbackground.png");
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 100vh;
+    min-height: 800px;
     padding: 5rem 1rem;
     display: flex;
     flex-direction: column;
@@ -186,6 +189,7 @@ section#aboutme{
     background-color: #161616;
     width: 100%;
     height: 100vh;
+    min-height: 940px;
 
 }
 #aboutme__text_and_picture{
@@ -348,6 +352,8 @@ aside{
         padding-top: 100px;
     }
     section#aboutme{
+        height: 100%;
+        min-height: 100%;
         padding-bottom: 4rem;
     }
     #aboutme__text_and_picture{
@@ -382,6 +388,9 @@ aside{
     section h2{
         padding-top: 80px;
         font-size: 70px;
+    }
+    #home{
+        min-height: 640px;
     }
     #aboutme div img{
         margin-top: 2rem;
@@ -459,7 +468,21 @@ aside{
     #home #header__h1_title h1{
         font-size: 100px;
     }
+    #header__extrainfo {
+        transform: rotate(90deg);
+        position: relative;
+        left: -9.5rem;
+        top: 60px;
+    }
+    /*#header__extrainfo p:nth-child(2){*/
+    /*    transform: rotate(-90deg);*/
+    /*    position: absolute;*/
+    /*    right: -1rem;*/
+    /*    top: 60vh;*/
+    /*}*/
+
     #aboutme__text_and_picture img{
         width: 200px;
     }
+
 }
