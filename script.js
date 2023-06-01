@@ -75,17 +75,45 @@ hamburger.addEventListener("click", toggleHamburger);
 
 
 //Filter Projects
-function filterProject(filter){
-    let projects = document.getElementsByClassName("projectslist");
-    let filtersButtons = document.getElementById("projectFilter").children;
-    for(let i = 0; i < projects.length; i++){
-        projects[i].style.display = "none";
-        filtersButtons[i].classList.remove("active");
+function moveRight(projectList){
+    // Disable cursor events
+    let filters = document.getElementById("projectFilter").children;
+    for(let i = 0; i < filters.length; i++){
+        filters[i].style.cursor = "default";
+        filters[i].style.pointerEvents = "none";
     }
 
+    if(projectList.classList.contains("activeProject")){
+        projectList.classList.remove("activeProject");
+        projectList.style.left = "110%";
+    } else{
+        projectList.style.left = "0";
+        projectList.classList.add("activeProject");
+        projectList.style.opacity = "1";
+    }
 
-    document.getElementById(filter).style.display = "block";
-    switch (filter){
+}
+
+async function moveLeft(projectList){
+    // Enable cursor events
+    let filters = document.getElementById("projectFilter").children;
+    for(let i = 0; i < filters.length; i++){
+        filters[i].style.cursor = "pointer";
+        filters[i].style.pointerEvents = "all";
+    }
+
+    projectList.style.opacity = "0";
+    projectList.style.left = "-210%";
+    projectList.classList.remove("activeProject")
+
+}
+
+function filterProject(filter){
+    let filtersButtons = document.getElementById("projectFilter").children;
+    for(let i = 0; i < filtersButtons.length; i++){
+        filtersButtons[i].classList.remove("active");
+    }
+    switch (filter.id){
         case "digitalArt":
             filtersButtons[0].classList.add("active");
             break;
@@ -96,12 +124,33 @@ function filterProject(filter){
             filtersButtons[2].classList.add("active");
             break;
     }
+
+    if(!filter.classList.contains("activeProject")){
+        let activeDiv = document.getElementsByClassName("activeProject")[0];
+        moveRight(activeDiv);
+        moveRight(filter);
+        setTimeout(()=> moveLeft(activeDiv), 1300);
+
+    }
+
 }
 
 let filters = document.getElementById("projectFilter").children;
-let digitalArt = filters[0];
-let paintings = filters[1];
-let graphicArt = filters[2];
-digitalArt.addEventListener("click", () => filterProject("digitalArt"));
-paintings.addEventListener("click", () => filterProject("paintings"));
-graphicArt.addEventListener("click", () => filterProject("graphicArt"));
+let digitalArtFilter = filters[0];
+let paintingsFilter = filters[1];
+let graphicArtFilter = filters[2];
+
+let allProjects = document.getElementsByClassName("projectslist");
+let digitalArt = allProjects[0];
+let paintings = allProjects[1];
+let graphicArt = allProjects[2];
+
+moveRight(digitalArt);
+moveRight(paintings);
+moveRight(paintings);
+moveLeft(paintings).then(null);
+moveLeft(graphicArt).then(null);
+
+digitalArtFilter.addEventListener("click", () => filterProject(digitalArt));
+paintingsFilter.addEventListener("click", () => filterProject(paintings));
+graphicArtFilter.addEventListener("click", () => filterProject(graphicArt));
