@@ -1,5 +1,4 @@
 //Nav smooth scroll
-
 let homeButton = document.getElementsByClassName("homeButton")[0];
 let homeButtonHam = document.getElementsByClassName("homeButton")[1];
 let home = document.getElementById("home");
@@ -23,6 +22,8 @@ contactButton.addEventListener("click", () => contact.scrollIntoView({behavior: 
 contactButtonHam.addEventListener("click", () => popupClick(contact));
 
 
+
+
 // Hamburger
 let hamburger = document.getElementById("hamburger");
 
@@ -42,6 +43,7 @@ function toggleHamburger(){
         popup.classList.add("popupClosed");
         for(let i = 0; i < popup.children.length; i++){
             popup.children[i].style.display = "none";
+            popup.children[i].style.opacity = "0";
         }
 
 
@@ -54,6 +56,7 @@ function toggleHamburger(){
         popup.classList.remove("popupClosed");
         for(let i = 0; i < popup.children.length; i++){
             popup.children[i].style.display = "block";
+            popup.children[i].style.opacity = "1";
         }
     }
 }
@@ -63,3 +66,38 @@ function popupClick(page){
 }
 
 hamburger.addEventListener("click", toggleHamburger);
+
+
+
+
+//Filter Projects
+function filterProject(filter){
+    let projects = document.getElementsByClassName("projectslist");
+    let filtersButtons = document.getElementById("projectFilter").children;
+    for(let i = 0; i < projects.length; i++){
+        projects[i].style.display = "none";
+        filtersButtons[i].classList.remove("active");
+    }
+
+
+    document.getElementById(filter).style.display = "block";
+    switch (filter){
+        case "digitalArt":
+            filtersButtons[0].classList.add("active");
+            break;
+        case "paintings":
+            filtersButtons[1].classList.add("active");
+            break;
+        case "graphicArt":
+            filtersButtons[2].classList.add("active");
+            break;
+    }
+}
+
+let filters = document.getElementById("projectFilter").children;
+let digitalArt = filters[0];
+let paintings = filters[1];
+let graphicArt = filters[2];
+digitalArt.addEventListener("click", () => filterProject("digitalArt"));
+paintings.addEventListener("click", () => filterProject("paintings"));
+graphicArt.addEventListener("click", () => filterProject("graphicArt"));
