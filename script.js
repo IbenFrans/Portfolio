@@ -42,8 +42,10 @@ function toggleHamburger(){
         hamburger.style.transform = "translate(0)";
         popup.classList.add("popupClosed");
         for(let i = 0; i < popup.children.length; i++){
-            popup.children[i].style.display = "none";
             popup.children[i].style.opacity = "0";
+            popup.children[i].style.marginRight = "-1000px";
+            popup.children[i].style.maxHeight = "0";
+            popup.children[i].style.transitionDelay = "0.05s";
         }
 
 
@@ -55,8 +57,10 @@ function toggleHamburger(){
         hamburger.style.transform = "translate(10px)";
         popup.classList.remove("popupClosed");
         for(let i = 0; i < popup.children.length; i++){
-            popup.children[i].style.display = "block";
             popup.children[i].style.opacity = "1";
+            popup.children[i].style.marginRight = "0";
+            popup.children[i].style.maxHeight = "100%";
+            popup.children[i].style.transitionDelay = "0.35s";
         }
     }
 }
