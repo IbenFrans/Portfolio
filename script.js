@@ -129,7 +129,7 @@ function filterProject(filter){
         let activeDiv = document.getElementsByClassName("activeProject")[0];
         moveRight(activeDiv);
         moveRight(filter);
-        setTimeout(()=> moveLeft(activeDiv), 1300);
+        setTimeout(()=> moveLeft(activeDiv), 800);
 
     }
 
@@ -154,3 +154,20 @@ moveLeft(graphicArt).then(null);
 digitalArtFilter.addEventListener("click", () => filterProject(digitalArt));
 paintingsFilter.addEventListener("click", () => filterProject(paintings));
 graphicArtFilter.addEventListener("click", () => filterProject(graphicArt));
+
+//Accordion animatie
+function  accordeon(accordeon){
+    accordeon.classList.toggle("activeAccordeon");
+    let panel = accordeon.nextElementSibling;
+    if(panel.style.maxHeight){
+        panel.style.maxHeight = null;
+        setTimeout(() => accordeon.style.borderRadius = "30px", 600);
+    } else {
+        accordeon.style.borderRadius = "30px 30px 0 0";
+        setTimeout(()=>panel.style.maxHeight = panel.scrollHeight + "px", 200);
+    }
+}
+let acc = document.getElementsByClassName("wplAccordeon");
+acc[1].addEventListener("click", () => accordeon(acc[1]));
+acc[0].addEventListener("click", () => accordeon(acc[0]));
+
