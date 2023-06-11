@@ -407,16 +407,41 @@ section div.projectslist h3, #projects ul h3{
     font-size: 20px;
     color: #fff;
 }
+.no_hover{
+    pointer-events: none;
+}
+.wplassignments ul li.info{
+    display: flex;
+    justify-content: center;
+    border-bottom: #4A4A4A 2px solid;
+}
+.wplassignments ul li.info img{
+    width: 40%;
+}
+.wplassignments ul li p{
+    text-align: left;
+    margin-left: 1.5rem;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+.wplassignments  ul li#learnings{
+    border-top: #4A4A4A 2px solid;
+    padding: 2rem 0;
+}
 
 
 
 /* Footer */
 footer{
+    overflow: hidden;
+    transition: all .2s ease-in-out;
     background-color: #161616;
     text-align: center;
     padding: 1rem;
 }
+
 footer h3{
+    transition: all .2s ease-in-out;
     font-family: "Roboto Condensed", sans-serif;
     color: #fff;
     font-size: 35px;
@@ -454,9 +479,65 @@ footer ul li a svg{
 }
 
 /* TEXT ORBS */
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
 aside{
     display: flex;
     justify-content: center;
+    cursor: default;
 }
 .textorb{
     margin: -135px 0;
@@ -491,6 +572,7 @@ aside{
     rotate: 22.5deg;
 }
 #prettysweethuh{
+    top: 10rem;
     right: -35%;
     rotate: -22.5deg;
 }

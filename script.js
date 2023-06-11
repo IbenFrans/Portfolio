@@ -73,7 +73,6 @@ hamburger.addEventListener("click", toggleHamburger);
 
 
 
-
 //Filter Projects
 function moveRight(projectList){
     // Disable cursor events
@@ -168,6 +167,15 @@ function  accordeon(accordeon){
     }
 }
 let acc = document.getElementsByClassName("wplAccordeon");
-acc[1].addEventListener("click", () => accordeon(acc[1]));
-acc[0].addEventListener("click", () => accordeon(acc[0]));
+for (let i = 0; i < acc.length; i++){
+    acc[i].addEventListener("click", () => accordeon(acc[i]));
+}
 
+
+
+//Orbs bounce
+let orbs = document.getElementsByClassName("textorb");
+for (let i = 0; i < orbs.length; i++){
+    orbs[i].addEventListener("mouseover", () => orbs[i].classList.add("bounce"));
+    orbs[i].addEventListener("mouseout", () => orbs[i].classList.remove("bounce"));
+}
