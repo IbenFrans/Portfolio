@@ -374,6 +374,25 @@ section div.projectslist h3, #projects ul h3{
     margin-bottom: 2rem;
 }
 
+iframe{
+    margin: 4rem auto 0 auto;
+    display: flex;
+    width: 70%;
+    height: 500px;
+}
+
+.designImages{
+    width: 70%;
+    margin: 4rem auto 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.designImages img{
+    width: 45%;
+}
+
 .wplassignments{
     display: none;
     width: 100%;
@@ -659,6 +678,16 @@ aside{
     #home{
         min-height: 640px;
     }
+    #Motiondesign{
+        margin-top: 8rem;
+    }
+
+    .projectsVideo video{
+        width: 100%;
+        max-height: auto;
+        max-width: auto;
+    }
+
     #aboutme div img{
         margin-top: 2rem;
     }
@@ -707,6 +736,9 @@ aside{
     #home #header__socialslinks{
         width: 80%;
     }
+    #Motiondesign{
+        margin-top: 11rem;
+    }
     #aboutme__text_and_picture img{
         width: 190px;
     }
@@ -722,6 +754,14 @@ aside{
     .projectcolumn {
         flex: 100%;
         max-width: 100%;
+    }
+    
+
+    .designImages{
+        flex-direction: column;
+    }
+    .designImages img{
+        width: 100%;
     }
     #wplPaddingTop10rem{
         padding-top: 12rem;
